@@ -1,51 +1,30 @@
-# sha1-file
+# sha1-file [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/sha1-file/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/sha1-file)
 
-[![NPM version][npm-image]][npm-url]
-[![Build status][travis-image]][travis-url]
-[![License][license-image]][license-url]
-[![Code style][standard-image]][standard-url]
+Get the SHA1 of a file.
 
-> Simply return an `sha1` sum of a given file. If using async version (by including callback), it will stream; successfully tested on files 4 GB+.
+[![NPM Badge](https://nodei.co/npm/sha1-file.png)](https://npmjs.com/package/sha1-file)
 
-### Installation
+## Install
 
-```
-$ npm install --save sha1-file
+```sh
+npm install sha1-file
 ```
 
-### Usage
+## Usage
 
-__sha1File(path, [callback])__
+```js
+const sha1File = require("sha1-file");
 
-```javascript
-const sha1File = require('sha1-file')
-
-// sync (no callback)
-
-sha1File('./path/to/a_file') // 'c8a2e2125f94492082bc484044edb4dc837f83b'
-
-// async/streamed (if using callback)
-
-sha1File('./path/to/a_file', function (error, sum) {
-  if (error) {
-    console.log(error)
-  }
-
-  console.log(sum) // 'c8a2e2125f94492082bc484044edb4dc837f83b'
-})
+sha1File.sync("file.txt");
+//=> "a0b65939670bc2c010f4d5d6a0b3e4e4590fb92b"
 ```
 
-### Caveats
+## API
 
-When using the _sync_ version (excluding the callback), you will be limited to
-a filesize of 2GB (1GB on 32-bit platforms), this is due to a *V8* restriction,
-see [this issue](https://github.com/nodejs/node/issues/1719) for more details.
+### sha1File(filepath)
 
-[npm-image]: https://img.shields.io/npm/v/sha1-file.svg
-[npm-url]: https://npmjs.org/package/sha1-file
-[travis-image]: https://img.shields.io/travis/roryrjb/sha1-file.svg
-[travis-url]: https://travis-ci.org/roryrjb/sha1-file
-[license-image]: http://img.shields.io/npm/l/sha1-file.svg
-[license-url]: LICENSE
-[standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg
-[standard-url]: https://github.com/feross/standard
+Returns a promise for the file hash.
+
+### sha1File.sync(filepath)
+
+Returns the file hash.

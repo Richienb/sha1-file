@@ -1,38 +1,45 @@
 {
-  "name": "sha1-file",
-  "main": "index.js",
-  "files": [
-    "index.js",
-    "test.js",
-    "LICENSE.md",
-    "README.md"
-  ],
-  "version": "1.0.4",
-  "description": "return an sha1sum of a given file",
-  "keywords": [
-    "sha1",
-    "sha1sum",
-    "checksum"
-  ],
-  "homepage": "https://github.com/roryrjb/sha1-file",
-  "author": {
-    "name": "Rory Bradford",
-    "email": "roryrjb@gmail.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/roryrjb/sha1-file.git"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "http://github.com/roryrjb/sha1-file/issues",
-    "email": "roryrjb@gmail.com"
-  },
-  "scripts": {
-    "test": "./node_modules/.bin/standard && ./node_modules/.bin/ahcom"
-  },
-  "devDependencies": {
-    "ahcom": "0.0.10",
-    "standard": "^12.0.1"
-  }
+	"name": "sha1-file",
+	"version": "1.0.4",
+	"description": "Get the SHA1 of a file.",
+	"repository": "https://github.com/Richienb/sha1-file.git",
+	"author": "Richie Bendall <richiebendall@gmail.com>",
+	"license": "MIT",
+	"main": "index.js",
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"engines": {
+		"node": ">=10"
+	},
+	"scripts": {
+		"lint": "xo",
+		"test": "yarn lint && ava"
+	},
+	"keywords": [
+		"sha1",
+		"sha1sum",
+		"checksum",
+		"file",
+		"generator",
+		"path",
+		"create",
+		"compute",
+		"hash"
+	],
+	"dependencies": {
+		"hasha": "^5.2.0"
+	},
+	"devDependencies": {
+		"ava": "^3.5.2",
+		"eslint-config-richienb": "^0.4.2",
+		"xo": "^0.28.1"
+	},
+	"resolutions": {
+		"eslint": "^6.8.0"
+	},
+	"xo": {
+		"extends": "richienb"
+	}
 }
