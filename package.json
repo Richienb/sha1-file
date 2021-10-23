@@ -1,6 +1,6 @@
 {
 	"name": "sha1-file",
-	"version": "2.0.1",
+	"version": "3.0.0",
 	"description": "Get the SHA1 of a file.",
 	"repository": "Richienb/sha1-file",
 	"author": {
