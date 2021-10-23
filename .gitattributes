@@ -1,4 +1,4 @@
-fixtures/test.txt text eol=lf
+fixture.txt text eol=lf
 
 # Common settings that generally should always be used with your language specific settings
 

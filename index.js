@@ -1,10 +1,13 @@
-"use strict"
-
-const hasha = require("hasha")
+import hasha from 'hasha';
 
 const hashaOptions = {
-	algorithm: "sha1"
+	algorithm: 'sha1',
+};
+
+export function sha1File(filepath) {
+	return hasha.fromFile(filepath, hashaOptions);
 }
 
-module.exports = filepath => hasha.fromFile(filepath, hashaOptions)
-module.exports.sync = filepath => hasha.fromFileSync(filepath, hashaOptions)
+export function sha1FileSync(filepath) {
+	return hasha.fromFileSync(filepath, hashaOptions);
+}

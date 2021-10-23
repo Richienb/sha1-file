@@ -1,31 +1,28 @@
-declare const sha1File: {
-	/**
-	Get the SHA1 of a file.
-	@param filepath The path to the file to hash.
-	@example
-	```
-	const sha1File = require("sha1-file");
+/**
+Asynchronously get the SHA1 of a file.
 
-	(async () => {
-		await sha1File("file.txt");
-		//=> "a0b65939670bc2c010f4d5d6a0b3e4e4590fb92b"
-	})();
-	```
-	*/
-	(filepath: string): Promise<string>
+@param filepath The path of the file to hash.
 
-	/**
-	Synchronously get the SHA1 of a file.
-	@param filepath The path to the file to hash.
-	@example
-	```
-	const sha1File = require("sha1-file");
+@example
+```
+import {sha1File} from 'sha1-file';
 
-	sha1File.sync("file.txt");
-	//=> "a0b65939670bc2c010f4d5d6a0b3e4e4590fb92b"
-	```
-	*/
-	sync(filepath: string): string
-}
+console.log(await sha1File('file.txt'));
+//=> 'a0b65939670bc2c010f4d5d6a0b3e4e4590fb92b'
+```
+*/
+export function sha1File(filepath: string): Promise<string>;
 
-export = sha1File
+/**
+Synchronously get the SHA1 of a file.
+
+@param filepath The path of the file to hash.
+
+@example
+```
+import {sha1FileSync} from 'sha1-file';
+
+console.log(sha1FileSync('file.txt'));
+//=> 'a0b65939670bc2c010f4d5d6a0b3e4e4590fb92b'
+*/
+export function sha1FileSync(filepath: string): string;
