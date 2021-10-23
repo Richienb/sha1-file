@@ -25,7 +25,7 @@ declare const sha1File: {
 	//=> "a0b65939670bc2c010f4d5d6a0b3e4e4590fb92b"
 	```
 	*/
-	sync(filepath: string): Promise<string>
+	sync(filepath: string): string
 }
 
 export = sha1File
